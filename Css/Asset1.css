@@ -1171,3 +1171,11 @@ footer .container .noi-dung.about p{
       width: 100%;
   }
 }
+
+
+/* Danh muc san pham */
+.DanhmucSanPham{
+    padding-left: 49px;
+    line-height: 2;
+    border-right: 1px solid #eaeaea ;
+}
