@@ -99,8 +99,11 @@
           $(".su-menu").parent("li").addClass("has-child");
         });
       </script>
+
       <div class="header">
-        <div class="row">
+      <header>
+        <div class="inner-header container-fluid">
+          <div class="row">
           <div class="col-md-2">
             <img
               src="./img/logo.png"
@@ -116,7 +119,7 @@
             <nav>
               <ul id="main-menu">
                 <li class="col-md-2">
-                  <a href="">GIỚI THIỆU</a>
+                  <a href="./html/Thongtin.html">GIỚI THIỆU</a>
                 </li>
                 <li class="col-md-2 inner-header has-child">
                   <span class="du">
@@ -174,10 +177,10 @@
                       <a href="./html/rezero.html">Re:Zero</a>
                     </li>
                     <li>
-                      <a href="">One Piece</a>
+                      <a href="./html/OP.html">One Piece</a>
                     </li>
                     <li>
-                      <a href="">Kamen Rider</a>
+                      <a href="./html/kmr.html">Kamen Rider</a>
                     </li>
                   </ul>
                 </li>
@@ -185,10 +188,10 @@
                   <span>SƠN - DUNG DỊCH</span>
                   <ul class="sub-menu">
                     <li>
-                      <a href="">Mr.Hobby</a>
+                      <a href="./html/SonHoppy.html">Mr.Hobby</a>
                     </li>
                     <li>
-                      <a href="">Tamiya</a>
+                      <a href="./html/Tamiya.html">Tamiya</a>
                     </li>
                   </ul>
                 </li>
@@ -198,6 +201,9 @@
           <div class="col-md-3 header-action">
             <div class="header-search-box col-md-6">
               <form action="/search" class="searchFrom">
+                  <button type="submit" class="btn-search-box" id="search-box-header" aria-label="button search">
+                  <ion-icon name="search-outline"></ion-icon>
+                  </button>
                 <div class="search-textBo">
                   <input type="hidden" name="type" value="product" />
                   <input
@@ -212,40 +218,61 @@
                     placeholder="Bợn cần giề..."
                   />
                 </div>
-                <button
-                  type="submit"
-                  class="btn-search-box"
-                  id="search-box-header"
-                  aria-label="button search"
-                >
-                  <ion-icon name="search-outline"></ion-icon>
-                </button>
+              
               </form>
             </div>
             <div class="action-nomal">
               <div class="header-account col-md-2">
-                <a href="./dangnhap.html" title="User">
+                <a href="./html/dangnhap.html" title="User">
                   <i class="fa-regular fa-user"></i>
                 </a>
               </div>
               <div class="header-wishlist co-md-2"></div>
+              <!-- cart layer_/out -->
               <div class="header-cart col-md-2">
-                <a
-                  href="./kiemtradonhang.html"
-                  title="Kiem Tra DOn Hang"
-                  class="notification"
-                >
-                  <i class="fa-solid fa-cart-shopping icon-grey"></i>
-                  <span class="badges" data-count="10"></span>
-                </a>
+                <nav>
+                   <button id="cart" class="" data-toggle="modal"  aria-hidden="true" data-target="#cart">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                   </button>
+                   <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Giỏ Hàng</h5>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cart-row">
+                                <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                                <span class="cart-price cart-header cart-column">Giá</span>
+                                <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                            </div>
+                            <div class="cart-items">
+    
+                            </div>
+                            <div class="cart-total">
+                                <strong class="cart-total-title">Tổng Cộng:</strong>
+                                <span class="cart-total-price">0VNĐ</span>
+                            </div>
+                        </div>
+    
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                            <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                        </div>
+                    </div>
+                    </div>
+                </nav>
+               
               </div>
             </div>
           </div>
         </div>
+        </div>
+       
         <!-- action mobile -->
         <div class="action_mobile">
           <div class="header-account">
-            <a href="./dangnhap.html" title="User">
+            <a href="./html/dangnhap.html" title="User">
               <i class="fa-regular fa-user"></i>
             </a>
           </div>
@@ -261,7 +288,8 @@
             </a>
           </div>
         </div>
-        </div>
+    </header> 
+    </div>
         <div class="btn-search-mobile">
           <div class="btn_mobile">
             <div class="btn_search_mobile">
@@ -283,7 +311,7 @@
 
                 <button
                   type="submit"
-                  class="btn-search-mobile"
+                  class="btn-searchh-mobile"
                   id="search-header-mobile"
                   aria-label="button search"
                 >
@@ -531,29 +559,30 @@
             </figure>
           </div>
       </div>
-      <div class="SanPhamMoi container" id="wrapper">
+      <section class="wwrapper">
+ <div class="SanPhamMoi container" id="wrapper">
         <div class="SanPhamMoi_list">
           <h3>Sản phẩm mới</h3>
         </div>
         <div class="showSilde_sanPhamMoi container">
           <ul class="productss">
-            <li>
+            <li class="main-product">
               <div class="products-itemw">
                   <div class="product-top">
                     <a href="" class="product-thumd">
-                          <img src="../img/listcart1.png" alt="">
+                          <img class="img_prd" src="../img/listcart1.png" alt="" >
                     </a>
-                    <a href="" class="buy-now">Mua Ngay</a>
-              </div>
+                    <button class="buy-now">Mua Ngay</button>
+                  </div>
               <div class="products-info">
-                    <a href="" class="product-cat">
+                    <a href="./html/gundamRG.html" class="product-cat">
                       RG
                     </a>
-                    <a href="" class="product-name">
+                    <a href="./html/gundamRG.html" class="product-name">
                       RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
                     </a>
                     <div class="product-price">
-                      919.000₫
+                    <span class="money"> 919000đ</span> 
                     </div>
                   </div>
               </div>
@@ -562,9 +591,9 @@
               <div class="products-itemw">
                 <div class="product-top">
                   <a href="" class="product-thumd">
-                        <img src="../img/listcart2.png" alt="">
+                        <img class="img_prd" src="../img/listcart2.png" alt="">
                   </a>
-                  <a href="" class="buy-now">Mua Ngay</a>
+                  <button class="buy-now">Mua Ngay</button>
             </div>
             <div class="products-info">
                   <a href="" class="product-cat">
@@ -574,7 +603,7 @@
                     RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
                   </a>
                   <div class="product-price">
-                    919.000₫
+                  <span class="money">919000đ</span>  
                   </div>
                 </div>
               </div>
@@ -583,97 +612,9 @@
               <div class="products-itemw">
                 <div class="product-top">
                   <a href="" class="product-thumd">
-                        <img src="../img/listcart3.png" alt="">
+                        <img class="img_prd" src="../img/listcart2.png" alt="">
                   </a>
-                  <a href="" class="buy-now">Mua Ngay</a>
-            </div>
-            <div class="products-info">
-                  <a href="" class="product-cat">
-                    FM 1/100
-                  </a>
-                  <a href="" class="product-name">
-                    Raider Gundam – Mô hình lắp ráp Gundam Bandai
-                  </a>
-                  <div class="product-price">
-                    1.199.000₫
-                  </div>
-  
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="products-itemw">
-                <div class="product-top">
-                  <a href="" class="product-thumd">
-                        <img src="../img/listcart4.png" alt="">
-                  </a>
-                  <a href="" class="buy-now">Mua Ngay</a>
-            </div>
-            <div class="products-info">
-                  <a href="" class="product-cat">
-                    HG
-                  </a>
-                  <a href="" class="product-name">
-                    Gundam Breaker Perfect Strike Freedom
-                  </a>
-                  <div class="product-price">
-                    597.000₫
-                  </div>
-  
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="products-itemw">
-                <div class="product-top">
-                  <a href="" class="product-thumd">
-                        <img src="../img/listcart5.png" alt="">
-                  </a>
-                  <a href="" class="buy-now">Mua Ngay</a>
-            </div>
-            <div class="products-info">
-                  <a href="" class="product-cat">
-                    HG
-                  </a>
-                  <a href="" class="product-name">
-                    Gundam Breaker Blazing Gundam
-                  </a>
-                  <div class="product-price">
-                    919.000₫
-                  </div>
-  
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="products-itemw">
-                <div class="product-top">
-                  <a href="" class="product-thumd">
-                        <img src="../img/listcart6.png" alt="">
-                  </a>
-                  <a href="" class="buy-now">Mua Ngay</a>
-            </div>
-            <div class="products-info">
-                  <a href="" class="product-cat">
-                    HG
-                  </a>
-                  <a href="" class="product-name">
-                    Gundam Breaker Wing Gundam Sky Zero
-                  </a>
-                  <div class="product-price">
-                    919.000₫
-                  </div>
-  
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="products-itemw">
-                <div class="product-top">
-                  <a href="" class="product-thumd">
-                        <img src="../img/listcart7.png" alt="">
-                  </a>
-                  <a href="" class="buy-now">Mua Ngay</a>
+                  <button class="buy-now">Mua Ngay</button>
             </div>
             <div class="products-info">
                   <a href="" class="product-cat">
@@ -683,9 +624,8 @@
                     RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
                   </a>
                   <div class="product-price">
-                    719.000₫
+                  <span class="money">919000đ</span>  
                   </div>
-  
                 </div>
               </div>
             </li>
@@ -693,9 +633,9 @@
               <div class="products-itemw">
                 <div class="product-top">
                   <a href="" class="product-thumd">
-                        <img src="../img/listcart8.png" alt="">
+                        <img class="img_prd" src="../img/listcart2.png" alt="">
                   </a>
-                  <a href="" class="buy-now">Mua Ngay</a>
+                  <button class="buy-now">Mua Ngay</button>
             </div>
             <div class="products-info">
                   <a href="" class="product-cat">
@@ -705,9 +645,8 @@
                     RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
                   </a>
                   <div class="product-price">
-                    1.919.000₫
+                  <span class="money">919000đ</span>  
                   </div>
-  
                 </div>
               </div>
             </li>
@@ -715,30 +654,134 @@
               <div class="products-itemw">
                 <div class="product-top">
                   <a href="" class="product-thumd">
-                        <img src="" alt="">
+                        <img class="img_prd" src="../img/listcart2.png" alt="">
                   </a>
-                  <a href="" class="buy-now">Mua Ngay</a>
+                  <button class="buy-now">Mua Ngay</button>
             </div>
             <div class="products-info">
                   <a href="" class="product-cat">
-                    Re:Zero
+                    RG
                   </a>
                   <a href="" class="product-name">
-                    Mô Hình Rem
+                    RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
                   </a>
                   <div class="product-price">
-                    919.000₫
+                  <span class="money">919000đ</span>  
                   </div>
-  
                 </div>
               </div>
             </li>
+            <li>
+              <div class="products-itemw">
+                <div class="product-top">
+                  <a href="" class="product-thumd">
+                        <img class="img_prd" src="../img/listcart2.png" alt="">
+                  </a>
+                  <button class="buy-now">Mua Ngay</button>
+            </div>
+            <div class="products-info">
+                  <a href="" class="product-cat">
+                    RG
+                  </a>
+                  <a href="" class="product-name">
+                    God Gundam – Mô hình lắp ráp Gundam Bandai
+                  </a>
+                  <div class="product-price">
+                  <span class="money">919000đ</span>  
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="products-itemw">
+                <div class="product-top">
+                  <a href="" class="product-thumd">
+                        <img class="img_prd" src="../img/listcart2.png" alt="">
+                  </a>
+                  <button class="buy-now">Mua Ngay</button>
+            </div>
+            <div class="products-info">
+                  <a href="" class="product-cat">
+                    RG
+                  </a>
+                  <a href="" class="product-name">
+                    RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
+                  </a>
+                  <div class="product-price">
+                  <span class="money">919000đ</span>  
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="products-itemw">
+                <div class="product-top">
+                  <a href="" class="product-thumd">
+                        <img class="img_prd" src="../img/listcart2.png" alt="">
+                  </a>
+                  <button class="buy-now">Mua Ngay</button>
+            </div>
+            <div class="products-info">
+                  <a href="" class="product-cat">
+                    RG
+                  </a>
+                  <a href="" class="product-name">
+                    RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
+                  </a>
+                  <div class="product-price">
+                  <span class="money">919000đ</span>  
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="products-itemw">
+                <div class="product-top">
+                  <a href="" class="product-thumd">
+                        <img class="img_prd" src="../img/listcart2.png" alt="">
+                  </a>
+                  <button class="buy-now">Mua Ngay</button>
+            </div>
+            <div class="products-info">
+                  <a href="" class="product-cat">
+                    RG
+                  </a>
+                  <a href="" class="product-name">
+                    RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
+                  </a>
+                  <div class="product-price">
+                  <span class="money">919000đ</span>  
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="products-itemw">
+                <div class="product-top">
+                  <a href="" class="product-thumd">
+                        <img class="img_prd" src="../img/listcart2.png" alt="">
+                  </a>
+                  <button class="buy-now">Mua Ngay</button>
+            </div>
+            <div class="products-info">
+                  <a href="" class="product-cat">
+                    RG
+                  </a>
+                  <a href="" class="product-name">
+                    RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
+                  </a>
+                  <div class="product-price">
+                  <span class="money">919000đ</span>  
+                  </div>
+                </div>
+              </div>
+            </li>     
           </ul>
-
-
         </div>
       </div>  
-
+      </section>
+     
+      
       <!-- Begin San Pham Giam Gia -->
       <div class="sanPham_GiamGia container">
             <div class="SanPhan_GiamGia_Producs">
@@ -749,32 +792,53 @@
                     <ul class="productss">
                       <li>
                         <div class="products-itemw">
-                            <div class="product-top">
-                              <a href="" class="product-thumd">
-                                    <img src="../img/listcart1.png" alt="">
-                              </a>
-                              <a href="" class="buy-now">Mua Ngay</a>
-                        </div>
-                        <div class="products-info">
-                              <a href="" class="product-cat">
-                                RG
-                              </a>
-                              <a href="" class="product-name">
-                                RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
-                              </a>
-                              <div class="product-price">
-                                919.000₫
-                              </div>
+                          <div class="product-top">
+                            <a href="" class="product-thumd">
+                                  <img class="img_prd" src="../img/listcart1.png" alt="">
+                            </a>
+                            <button class="buy-now">Mua Ngay</button>
+                      </div>
+                      <div class="products-info">
+                            <a href="" class="product-cat">
+                              RG
+                            </a>
+                            <a href="" class="product-name">
+                               God Gundam – Mô hình lắp ráp Gundam Bandai
+                            </a>
+                            <div class="product-price">
+                            <span class="money">919000đ</span>  
                             </div>
+                          </div>
                         </div>
                       </li>
                       <li>
                         <div class="products-itemw">
                           <div class="product-top">
                             <a href="" class="product-thumd">
-                                  <img src="../img/listcart2.png" alt="">
+                                  <img class="img_prd" src="../img/listcart2.png" alt="">
                             </a>
-                            <a href="" class="buy-now">Mua Ngay</a>
+                            <button class="buy-now">Mua Ngay</button>
+                      </div>
+                      <div class="products-info">
+                            <a href="" class="product-cat">
+                              RG
+                            </a>
+                            <a href="" class="product-name">
+                              RG God Gundam – Mô hình lắp ráp Gundam Bandai
+                            </a>
+                            <div class="product-price">
+                            <span class="money">919000đ</span>  
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="products-itemw">
+                          <div class="product-top">
+                            <a href="" class="product-thumd">
+                                  <img class="img_prd" src="../img/listcart3.png" alt="">
+                            </a>
+                            <button class="buy-now">Mua Ngay</button>
                       </div>
                       <div class="products-info">
                             <a href="" class="product-cat">
@@ -784,7 +848,7 @@
                               RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
                             </a>
                             <div class="product-price">
-                              919.000₫
+                            <span class="money">919000đ</span>  
                             </div>
                           </div>
                         </div>
@@ -793,97 +857,9 @@
                         <div class="products-itemw">
                           <div class="product-top">
                             <a href="" class="product-thumd">
-                                  <img src="../img/listcart3.png" alt="">
+                                  <img class="img_prd" src="../img/listcart4.png" alt="">
                             </a>
-                            <a href="" class="buy-now">Mua Ngay</a>
-                      </div>
-                      <div class="products-info">
-                            <a href="" class="product-cat">
-                              FM 1/100
-                            </a>
-                            <a href="" class="product-name">
-                              Raider Gundam – Mô hình lắp ráp Gundam Bandai
-                            </a>
-                            <div class="product-price">
-                              1.199.000₫
-                            </div>
-            
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="products-itemw">
-                          <div class="product-top">
-                            <a href="" class="product-thumd">
-                                  <img src="../img/listcart4.png" alt="">
-                            </a>
-                            <a href="" class="buy-now">Mua Ngay</a>
-                      </div>
-                      <div class="products-info">
-                            <a href="" class="product-cat">
-                              HG
-                            </a>
-                            <a href="" class="product-name">
-                              Gundam Breaker Perfect Strike Freedom
-                            </a>
-                            <div class="product-price">
-                              597.000₫
-                            </div>
-            
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="products-itemw">
-                          <div class="product-top">
-                            <a href="" class="product-thumd">
-                                  <img src="../img/listcart5.png" alt="">
-                            </a>
-                            <a href="" class="buy-now">Mua Ngay</a>
-                      </div>
-                      <div class="products-info">
-                            <a href="" class="product-cat">
-                              HG
-                            </a>
-                            <a href="" class="product-name">
-                              Gundam Breaker Blazing Gundam
-                            </a>
-                            <div class="product-price">
-                              919.000₫
-                            </div>
-            
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="products-itemw">
-                          <div class="product-top">
-                            <a href="" class="product-thumd">
-                                  <img src="../img/listcart6.png" alt="">
-                            </a>
-                            <a href="" class="buy-now">Mua Ngay</a>
-                      </div>
-                      <div class="products-info">
-                            <a href="" class="product-cat">
-                              HG
-                            </a>
-                            <a href="" class="product-name">
-                              Gundam Breaker Wing Gundam Sky Zero
-                            </a>
-                            <div class="product-price">
-                              919.000₫
-                            </div>
-            
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="products-itemw">
-                          <div class="product-top">
-                            <a href="" class="product-thumd">
-                                  <img src="../img/listcart7.png" alt="">
-                            </a>
-                            <a href="" class="buy-now">Mua Ngay</a>
+                            <button class="buy-now">Mua Ngay</button>
                       </div>
                       <div class="products-info">
                             <a href="" class="product-cat">
@@ -893,9 +869,8 @@
                               RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
                             </a>
                             <div class="product-price">
-                              719.000₫
+                            <span class="money">919000đ</span>  
                             </div>
-            
                           </div>
                         </div>
                       </li>
@@ -903,9 +878,9 @@
                         <div class="products-itemw">
                           <div class="product-top">
                             <a href="" class="product-thumd">
-                                  <img src="../img/listcart8.png" alt="">
+                                  <img class="img_prd" src="../img/listcart5.png" alt="">
                             </a>
-                            <a href="" class="buy-now">Mua Ngay</a>
+                            <button class="buy-now">Mua Ngay</button>
                       </div>
                       <div class="products-info">
                             <a href="" class="product-cat">
@@ -915,9 +890,8 @@
                               RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
                             </a>
                             <div class="product-price">
-                              1.919.000₫
+                            <span class="money">919000đ</span>  
                             </div>
-            
                           </div>
                         </div>
                       </li>
@@ -925,25 +899,88 @@
                         <div class="products-itemw">
                           <div class="product-top">
                             <a href="" class="product-thumd">
-                                  <img src="../img/listcart9.png" alt="">
+                                  <img class="img_prd" src="../img/listcart6.png" alt="">
                             </a>
-                            <a href="" class="buy-now">Mua Ngay</a>
+                            <button class="buy-now">Mua Ngay</button>
                       </div>
                       <div class="products-info">
                             <a href="" class="product-cat">
-                              Re:Zero
+                              RG
                             </a>
                             <a href="" class="product-name">
-                              Mô Hình Rem
+                              RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
                             </a>
                             <div class="product-price">
-                              919.000₫
+                            <span class="money">919000đ</span>  
                             </div>
-            
                           </div>
                         </div>
                       </li>
-                    </ul>
+                      <li>
+                        <div class="products-itemw">
+                          <div class="product-top">
+                            <a href="" class="product-thumd">
+                                  <img class="img_prd" src="../img/listcart7.png" alt="">
+                            </a>
+                            <button class="buy-now">Mua Ngay</button>
+                      </div>
+                      <div class="products-info">
+                            <a href="" class="product-cat">
+                              RG
+                            </a>
+                            <a href="" class="product-name">
+                              RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
+                            </a>
+                            <div class="product-price">
+                            <span class="money">919000đ</span>  
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="products-itemw">
+                          <div class="product-top">
+                            <a href="" class="product-thumd">
+                                  <img class="img_prd" src="../img/listcart8.png" alt="">
+                            </a>
+                            <button class="buy-now">Mua Ngay</button>
+                      </div>
+                      <div class="products-info">
+                            <a href="" class="product-cat">
+                              RG
+                            </a>
+                            <a href="" class="product-name">
+                              RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
+                            </a>
+                            <div class="product-price">
+                            <span class="money">919000đ</span>  
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="products-itemw">
+                          <div class="product-top">
+                            <a href="" class="product-thumd">
+                                  <img class="img_prd" src="../img/listcart9.png" alt="">
+                            </a>
+                            <button class="buy-now">Mua Ngay</button>
+                      </div>
+                      <div class="products-info">
+                            <a href="" class="product-cat">
+                              RG
+                            </a>
+                            <a href="" class="product-name">
+                              RG 35 God Gundam – Mô hình lắp ráp Gundam Bandai
+                            </a>
+                            <div class="product-price">
+                            <span class="money">919000đ</span>  
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                    </ul> 
           
                   </div>
 
@@ -1010,10 +1047,78 @@
           <!--Kết Thúc Nội Dung Liên Hệ-->
       </div>
   </footer>
+    <!-- back to top -->
+    <div id="backtop">
+      <i class="fa-solid fa-chevron-up"></i>
+    </div>
+    <!-- ChatBox -->
+    <div class="chatbox">
+    <div id="body"> 
+      
+    <div id="chat-circle" class="btn btn-raised">
+            <div id="chat-overlay"></div>
+            <i class="fa-brands fa-facebook-messenger"></i>
+      </div>
+      
+      <div class="chat-box">
+        <div class="chat-box-header">
+          ChatBot
+          <span class="chat-box-toggle"><i class="material-icons">close</i></span>
+        </div>
+        <div class="chat-box-body">
+          <div class="chat-box-overlay">   
+          </div>
+          <div class="chat-logs">
+           
+          </div><!--chat-log -->
+        </div>
+        <div class="chat-input">      
+          <form>
+            <input type="text" id="chat-input" placeholder="Send a message..."/>
+          <button type="submit" class="chat-submit" id="chat-submit"><i class="material-icons">send</i></button>
+          </form>      
+        </div>
+      </div>  
+    </div>
+    </div>
+    <!-- Chat box mobile -->
+    <div class="chatbox_mobile">
+      <div id="body"> 
+        
+      <div id="chat-circle" class="btn btn-raised">
+              <div id="chat-overlay"></div>
+              <i class="fa-brands fa-facebook-messenger"></i>
+        </div>
+        
+        <div class="chat-box">
+          <div class="chat-box-header">
+            ChatBot
+            <span class="chat-box-toggle"><i class="material-icons">close</i></span>
+          </div>
+          <div class="chat-box-body">
+            <div class="chat-box-overlay">   
+            </div>
+            <div class="chat-logs">
+             
+            </div><!--chat-log -->
+          </div>
+          <div class="chat-input">      
+            <form>
+              <input type="text" id="chat-input" placeholder="Send a message..."/>
+            <button type="submit" class="chat-submit" id="chat-submit"><i class="material-icons">send</i></button>
+            </form>      
+          </div>
+        </div>  
+      </div>
+      </div>
         <!-- End Footer -->
     <script type="text/javascript" src="../bootTraps/slick/slick.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="../JS/assest.js"></script>
+    	
+<script type="text/javascript" src="https://cunghocweb.com/data-out/js/jquery.js"></script>
+
   </body>
 </html>
